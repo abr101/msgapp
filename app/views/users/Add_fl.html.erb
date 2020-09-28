@@ -1,0 +1,19 @@
+<h1>ADD Freind</h1>
+<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Messages</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><a href="/users/msg"><button class="btn btn-success">message</button></a></td>
+        <td><a href="<%= users_destroy_path(id: user.id)%>"><button class="btn btn-danger">Add</button></a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
